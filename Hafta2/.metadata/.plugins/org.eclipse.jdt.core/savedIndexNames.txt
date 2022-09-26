@@ -1,0 +1,10 @@
+INDEX VERSION 1.131+/home/emre/Belgeler/Projeler/javademos/Hafta2/.metadata/.plugins/org.eclipse.jdt.core
+2398783364.index
+2131342185.index
+3673493032.index
+4035838899.index
+1865797976.index
+1400417390.index
+1626509723.index
+2346198683.index
+638439650.index

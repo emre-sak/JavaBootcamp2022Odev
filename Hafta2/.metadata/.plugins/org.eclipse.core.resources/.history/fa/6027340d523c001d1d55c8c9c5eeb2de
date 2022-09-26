@@ -1,0 +1,20 @@
+package methods2;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		
+
+	}
+	
+	//Veriable arguments, istediğimiz kadar sayı yazabiliyoruz. Arkaplanda diziye çeviriyor.
+	public static int topla(int... sayilar) { 
+        int toplam = 0;
+        for(int sayi:sayilar){
+            toplam+=sayi;
+        }
+        return toplam;
+    }
+	
+}

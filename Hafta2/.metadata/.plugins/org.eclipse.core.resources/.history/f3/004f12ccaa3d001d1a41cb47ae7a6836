@@ -1,0 +1,16 @@
+package inheritanceDemo;
+/*
+UI = User Interface.
+Manager'de yazdığımız kodları arayüzde çağırırız. KrediUI'ın arayüzden çağrıldığını farz edelim.
+Mesela parametreye BaseKrediManager baseKrediManager yazmak yerine OgretmenKrediManager ogretmenKrediManager de 
+yazabilirdik ama bunu yapmaya gerek yok. Biz sonuçta Tarım için de Askerler içinde krediler çıkartabiliriz.
+Sıklıkla bu yöntemi kullandığımız tekniklerden bir tanesi de veri tabanı geçişleridir. Mesela bir proje yaptık 
+proje mysql, oracle, sql server veri tabanlarını desteklesin istiyoruz ve bu şekilde sql için bir veri erişim, 
+oracle için bir veri erişim, mysql için bir veri erişim yazarız ve onu buraya enjekte ederiz. Bu sayde değişime 
+direnç göstermeyiz.
+ */
+public class KrediUI {
+	public void krediHesapla(BaseKrediManager baseKrediManager) {
+		baseKrediManager.hesapla();
+	}
+}

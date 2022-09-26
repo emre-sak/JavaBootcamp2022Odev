@@ -1,0 +1,21 @@
+package inheritance;
+// İki nesne arasında miras durumu.
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Customer customer = new Customer();
+        customer.age = 25; //Diğer özelliklerde çıkıyor.
+
+        Employe employe = new Employe();
+        employe.firstName = "Emre"; //Diğer özelliklerde çıkıyor.
+
+        EmployeManager employeManager = new EmployeManager();
+        CustomerManager customerManager  = new CustomerManager();
+
+        customerManager.add(); //Diğer metotlarda çıkar.
+        employeManager.bestEmploye(); //Diğer metotlarda çıkar.
+        
+	}
+
+}

@@ -1,0 +1,23 @@
+package methods2;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		int a = topla(1, 2, 3, 4, 5, 6, 7);
+		System.out.println(a);
+
+	}
+
+	// Veriable arguments, istediğimiz kadar sayı yazabiliyoruz. Arkaplanda diziye
+	// çeviriyor.
+	public static int topla(int... sayilar) {
+
+		int toplam = 0;
+		for (int sayi : sayilar) {
+			toplam += sayi;
+		}
+		return toplam;
+	}
+
+}
