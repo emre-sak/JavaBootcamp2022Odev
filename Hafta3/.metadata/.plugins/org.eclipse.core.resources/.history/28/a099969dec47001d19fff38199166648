@@ -1,0 +1,16 @@
+package interfaceDemo;
+/*
+Mesela bir şirket düşünelim ve biz bu şirket için otomasyon yapmak istiyoruz. Veritabanı uyuglama
+larına biz otomasyon diyoruz. Şirkette çalışanlar var ve bunların yaptığı işlemler var. Yalnız şir
+kette iki tip çalışan var birisi firma personeli, birisi ise şirketin kendi personeli. Sadece kendi 
+personelimize maaş ve yemek veriyoruz.
+ */
+public class Main {
+
+	public static void main(String[] args) {
+		
+		
+
+	}
+
+}

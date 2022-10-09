@@ -1,0 +1,3 @@
+package overridin;
+public class TarimKrediManager extends BaseKrediManager{
+}

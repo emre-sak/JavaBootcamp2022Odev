@@ -1,0 +1,30 @@
+/*
+Bir ürünü kaydederken, bir ürünü güncellerken ürünün kurallara uygun olup olmadığını bulmak için kullanırız.
+static ifadesi bu nesnenin örneğini oluşturur. Fakat bu static olarak bir kere oluşuyor örneğin bir web uygulamasında product va
+lidator'ü static yaparsak product validatör bir kere oluşur ve onu bütün kullanıcılar o şekilde kullanır. Bu tip araçlarda araç
+amacıyla kullanacağımız yapılarda staticlerden yararlanıyoruz. static tanımladığımızda hiç bir şekilde uygulama sıfırlanana kadar
+bellekten atılmıyor. Yardımcı araçlar, kullan bırak araçlar static yapılabilir.
+ */
+public class ProductValidator {
+    static { //static ortamda çalışılması isteniyorsa.
+        System.out.println("Static yapıcı blok çalıştı.");
+    }
+    public ProductValidator() { //Newlemeden çalışmaz.
+        System.out.println("Yapıcı blok çalıştı.");
+    }
+    public static boolean isValid(Product product) { // Ne is valid? Buna göndereceğimiz product.
+        //Veritabanımıza kaydedilmesi için fiyatının 0'dan büyük ve isminin verilmiş olması gerekiyor.
+        if(product.price > 0 && !product.name.isEmpty()) {
+            return true;
+        }
+        return false;
+    }
+
+    //İnnerClass. İnner classlar static olabilir ama ana classlar olamaz. Genellikle gruplama amaçlı kullanırız.
+    public static class BaskaBirClass {
+        public static void sil() {
+
+        }
+    }
+
+}

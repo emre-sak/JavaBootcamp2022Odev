@@ -1,0 +1,25 @@
+package oopWithNLayeredApp.business;
+
+import oopWithNLayeredApp.core.logging.Logger;
+import oopWithNLayeredApp.dataAccess.BaseDatabase;
+import oopWithNLayeredApp.entities.Instructor;
+
+public class InstructorManager {
+	private BaseDatabase baseDatabase;
+	private Logger[] loggers;
+	
+	public InstructorManager(BaseDatabase baseDatabase, Logger[] loggers) {
+		this.baseDatabase = baseDatabase;
+		this.loggers = loggers;
+	}
+
+	public void add(Instructor instructor) {
+		
+		baseDatabase.add(instructor);
+		
+		for (Logger logger : loggers) {
+			logger.log(instructor.getName() + " " + instructor.getLastName());
+		}
+		
+	}
+}

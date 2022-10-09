@@ -1,0 +1,28 @@
+package oopWithNLayeredApp.business;
+
+import oopWithNLayeredApp.core.logging.Logger;
+import oopWithNLayeredApp.dataAccess.BaseDatabase;
+import oopWithNLayeredApp.entities.Category;
+
+public class CategoryManager {
+	private BaseDatabase baseDatabase;
+	private Logger[] loggers;
+	
+	public CategoryManager(BaseDatabase baseDatabase, Logger[] loggers) {
+		this.baseDatabase = baseDatabase;
+		this.loggers = loggers;
+	}
+	
+	public void add(Category category) {
+		
+		baseDatabase.add(category);
+		
+		for (Logger logger : loggers) {
+			logger.log(category.getName());
+		}
+		
+	}
+	
+	
+	
+}

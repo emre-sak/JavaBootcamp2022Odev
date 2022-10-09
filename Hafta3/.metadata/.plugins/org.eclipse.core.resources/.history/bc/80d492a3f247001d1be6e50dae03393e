@@ -1,0 +1,39 @@
+package oopWithNLayeredApp.business;
+
+import java.util.ArrayList;
+
+import oopWithNLayeredApp.core.logging.Logger;
+import oopWithNLayeredApp.dataAccess.BaseDatabase;
+import oopWithNLayeredApp.entities.Category;
+
+public class CategoryManager {
+	private BaseDatabase baseDatabase;
+	private ArrayList<Logger> loggers;
+	private ArrayList<Category> categoryControl;
+	
+	public CategoryManager(BaseDatabase baseDatabase, ArrayList<Logger> loggers, ArrayList<Category> categoryControl) {
+		this.baseDatabase = baseDatabase;
+		this.loggers = loggers;
+		this.categoryControl = categoryControl;
+	}
+	
+	public void add(Category category) throws Exception {
+		
+		for (Category categoryes : categoryControl) {
+			if(categoryes.getName().contains(category.getName())) {
+				throw new Exception("Kategori isimleri aynı olamaz");
+			}
+		}
+		
+		baseDatabase.add(category);
+		System.out.println("Kategori eklendi : " + category.getName());
+		
+		for (Logger logger : loggers) {
+			logger.log(category.getName());
+		}
+		
+	}
+	
+	
+	
+}

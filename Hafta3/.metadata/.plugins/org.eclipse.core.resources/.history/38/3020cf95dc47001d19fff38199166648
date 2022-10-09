@@ -1,0 +1,14 @@
+/*
+Mesela bir oyun yazıyoruz ve oyunda puan hesaplama işlemi yapıyoruz ve oyunumuzda 3 tane  kullanıcı oluşturacağız erkek, kadın, çocuk.
+Puanlama yaparken erkek ve kadın kullanıcılarda fark yok.
+Abstractlar bizim base'yi gizlemek zorunda olduğumuz zamanlarda da kullanılır. Yani Abstract sınıflar asla newlenemez.
+Mesela yarın oyuna yeni bir özellik eklemek istiyoruz ve özelliğimizde OlderGameCalculator yani yaşı ileri olan kullanıcılarda belli
+bir demografik yapıya sokmak istiyoruz. */
+public class Main {
+    public static void main(String[] args) {
+
+        GameCalculator gameCalculator = new WomanGameCalculator();
+
+
+    }
+}

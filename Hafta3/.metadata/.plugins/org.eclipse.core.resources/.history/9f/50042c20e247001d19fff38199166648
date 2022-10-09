@@ -1,0 +1,17 @@
+public class CustomerManager {
+    /*
+     Bizim stratejimiz görevini görüyor. Yani biz kullanırken hangi veritabanı sistemini verirsek onun getData'sı çalışacak.
+     */
+    BaseDatabaseManager baseDatabaseManager;
+
+    //Müşterileri getir operasyonu
+    public void getCustomers() {
+
+        /*Böyle bir kullanım yaparsak oracleye bağımlı olmuş oluruz.
+        OracleDatabaseManager oracleDatabaseManager = new OracleDatabaseManager();
+        oracleDatabaseManager.getData(); */
+
+        baseDatabaseManager.getData();
+
+    }
+}

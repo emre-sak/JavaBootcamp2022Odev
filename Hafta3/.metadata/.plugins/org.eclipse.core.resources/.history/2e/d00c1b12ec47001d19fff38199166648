@@ -1,0 +1,3 @@
+package overridin;
+public class OgretmenKrediManager extends BaseKrediManager{
+}

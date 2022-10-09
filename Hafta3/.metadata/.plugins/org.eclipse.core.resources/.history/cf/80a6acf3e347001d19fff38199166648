@@ -1,0 +1,12 @@
+/*
+Dal = Data Access Layer. Bugüne kadar biz hep manager kullandık manager bizim iş kodlarını öyle mi böyle mi diye yazdığımız yerlerdir.
+Veritabanıyla ilgili operasyonları da dal'a yazarız. Aynı zamanda da  extends
+edebilir(örnek olarak :  extends OracleCustomerDal implements ICustomersDal, IRepository).
+ */
+public class MySqlCustomerDal implements ICustomersDal, IRepository{
+
+    @Override
+    public void add() {
+        System.out.println("MySql Eklendi.");
+    }
+}
