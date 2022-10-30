@@ -1,0 +1,51 @@
+package Kodlama.io.Devs.business.concretes;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import Kodlama.io.Devs.business.abstracts.ProgrammingLanguageService;
+import Kodlama.io.Devs.dataAccess.abstracts.ProgrammingLanguageRepository;
+import Kodlama.io.Devs.entites.concretes.ProgrammingLanguage;
+
+@Service
+public class ProgrammingLanguageManager implements ProgrammingLanguageService {
+
+	private ProgrammingLanguageRepository languageRepository;
+
+	@Autowired
+	public ProgrammingLanguageManager(ProgrammingLanguageRepository languageRepository) {
+		this.languageRepository = languageRepository;
+	}
+
+	@Override
+	public List<ProgrammingLanguage> getAdd(){
+
+		return languageRepository.getAdd();
+	}
+
+	@Override
+	public List<ProgrammingLanguage> getUpdate() {
+
+		return languageRepository.getUpdate();
+	}
+
+	@Override
+	public List<ProgrammingLanguage> getRemove() {
+
+		return languageRepository.getRemove();
+
+	}
+
+	@Override
+	public List<ProgrammingLanguage> getAll(ProgrammingLanguage programmingLanguage) throws Exception {
+		if (programmingLanguage.getName().isEmpty()) {
+			throw new Exception("İsim Boş Geçilemez.");
+		}
+		return languageRepository.getAdd();
+	}
+
+	
+
+}

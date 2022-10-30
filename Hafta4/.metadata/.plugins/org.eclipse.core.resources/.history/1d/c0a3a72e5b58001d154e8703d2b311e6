@@ -1,0 +1,79 @@
+package Kodlama.io.Devs.dataAccess.concretes;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import Kodlama.io.Devs.dataAccess.abstracts.ProgrammingLanguageRepository;
+import Kodlama.io.Devs.entites.concretes.ProgrammingLanguage;
+
+@Repository
+public class inMemoryProgrammingLanguageRepository implements ProgrammingLanguageRepository{
+
+	List<ProgrammingLanguage> languages;
+	
+	public inMemoryProgrammingLanguageRepository() {
+		
+		languages = new ArrayList<ProgrammingLanguage>();
+		languages.add(new ProgrammingLanguage(1, "Java"));
+		languages.add(new ProgrammingLanguage(2, "C#"));
+		languages.add(new ProgrammingLanguage(3, "Python"));
+		
+	}
+	
+	@Override
+	public List<ProgrammingLanguage> getAdd() {
+		
+		languages.add(new ProgrammingLanguage());
+		
+		return languages;
+		
+	}
+	
+	@Override
+	public List<ProgrammingLanguage> getAll() {
+		
+		return languages;
+		
+	}
+	
+	@Override
+	public int getById() {
+		
+		for (ProgrammingLanguage programmingLanguage : languages) {
+			
+				return programmingLanguage.getId();
+			
+		}
+		
+		return 0;
+		
+	}
+
+
+	@Override
+	public List<ProgrammingLanguage> getUpdate() {
+		
+		languages.set(0, new ProgrammingLanguage(1, "JavaScript"));
+		languages.set(1, new ProgrammingLanguage(2, "Ruby"));
+		languages.set(2, new ProgrammingLanguage(3, "C++"));
+		
+		return languages;
+		
+	}
+
+	@Override
+	public List<ProgrammingLanguage> getRemove() {
+		
+		languages.remove(0);
+		
+		return languages;
+		
+	}
+
+
+	
+
+	
+}
